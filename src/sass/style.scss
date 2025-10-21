@@ -1,0 +1,29 @@
+.chat {
+  max-width: 1400px;
+  color: black;
+  background-color: #3392c2;
+}
+.chat__header {
+  max-height: 55px;
+  border-radius: 10px;
+  padding: 8px;
+  background-color: antiquewhite;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat__user-info {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    background-color: aqua;
+    margin: 0px;
+  }
+  span {
+    background-color: bisque;
+  }
+}
+
+// ESTILAR TODO PARA QUITAR LOS ESPACIOS EN LOS BORDES
+// Y AVERIGUAR PORQUE HAY ESPACIOS ENTRE ITEMS
