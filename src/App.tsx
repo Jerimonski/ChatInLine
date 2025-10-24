@@ -6,13 +6,17 @@ function App() {
           <h2 className='chat__title'>Open Chat</h2>
           <span className='chat__username'>Chateando como: "username"</span>
         </div>
-        <div className='chat__stats'> "Cantidad de mensajes o usuarios"</div>
+        <div className='chat__stats'>
+          <span className='chat__messages-Count'>
+            "Cantidad de mensajes o usuarios"
+          </span>
+        </div>
       </section>
       <section className='chat__messages'>
         <div className='chat__message-list'>HERE IS GONNA BE ALL MESSAGES</div>
-        <div>
+        <div className='chat__box-input-message'>
           <input className='chat__input-message' type='text' />
-          <button className='chat__send-button'>Send</button>
+          <button className='chat__send-button'>IC</button>
         </div>
       </section>
     </main>
