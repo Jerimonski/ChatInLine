@@ -54,7 +54,13 @@
 
 .chat__message-list {
   height: 400px;
+  width: 100%;
   overflow-y: scroll;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #555;
 }
 
 .chat__box-input-message {
@@ -66,7 +72,9 @@
 .chat__box-input-message input {
   border-radius: 10px;
   padding: 6px;
+  font-size: 0.8rem;
   width: 95%;
+  outline: none;
 }
 .chat__box-input-message button {
   border-radius: 10px;

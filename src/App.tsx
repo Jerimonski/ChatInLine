@@ -15,7 +15,11 @@ function App() {
       <section className='chat__messages'>
         <div className='chat__message-list'>HERE IS GONNA BE ALL MESSAGES</div>
         <div className='chat__box-input-message'>
-          <input className='chat__input-message' type='text' />
+          <input
+            className='chat__input-message'
+            placeholder='Ingresa un comentario'
+            type='text'
+          />
           <button className='chat__send-button'>IC</button>
         </div>
       </section>
