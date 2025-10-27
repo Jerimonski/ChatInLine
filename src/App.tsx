@@ -1,28 +1,52 @@
+import { useState } from "react"
+import io, { Socket } from "socket.io-client"
+import Chat from "./components/Chat"
+
+const PORT: string = import.meta.env.PORT || "3001"
+const VITE_SERVER_URL: string =
+  import.meta.env.VITE_SERVER_URL || `http://localhost:${PORT}`
+const socket: Socket = io(VITE_SERVER_URL)
+
 function App() {
+  const [username, setUserName] = useState<string>("")
+  const [room, setRoom] = useState<string>("")
+  const [showChat, setShowChat] = useState(false)
+
+  const joinRoom = () => {
+    if (username && room) {
+      socket.emit("join_room", { room, username })
+      setShowChat(true)
+    }
+  }
+
   return (
-    <main className='chat'>
-      <section className='chat__header'>
-        <div className='chat__user-info'>
-          <h2 className='chat__title'>Open Chat</h2>
-          <span className='chat__username'>Chateando como: "username"</span>
+    <main>
+      {!showChat ? (
+        <div className='home'>
+          <form className='home__form'>
+            <h1>WELCOME</h1>
+            <input
+              type='text'
+              onChange={(e) => setUserName(e.target.value)}
+              value={username}
+              required
+              placeholder='Your Name'
+            />
+            <input
+              type='text'
+              onChange={(e) => setRoom(e.target.value)}
+              value={room}
+              required
+              placeholder='Room ID'
+            />
+            <button type='submit' onClick={joinRoom}>
+              Join a Room
+            </button>
+          </form>
         </div>
-        <div className='chat__stats'>
-          <span className='chat__messages-Count'>
-            "Cantidad de mensajes o usuarios"
-          </span>
-        </div>
-      </section>
-      <section className='chat__messages'>
-        <div className='chat__message-list'>HERE IS GONNA BE ALL MESSAGES</div>
-        <div className='chat__box-input-message'>
-          <input
-            className='chat__input-message'
-            placeholder='Ingresa un comentario'
-            type='text'
-          />
-          <button className='chat__send-button'>IC</button>
-        </div>
-      </section>
+      ) : (
+        <Chat socket={socket} username={username} room={room} />
+      )}
     </main>
   )
 }
