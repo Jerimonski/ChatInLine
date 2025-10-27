@@ -5,7 +5,29 @@
   font-weight: normal;
   font-style: normal;
 }
+* {
+  margin: 0;
+}
 
+.home {
+  top: 0;
+  height: 100vh;
+  display: flex;
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0c93e147-57b7-42d1-900b-cd408a475b40/dgsf2wm-42841d7a-9499-4177-ab0c-60705c64dd11.jpg/v1/fill/w_1188,h_673,q_70,strp/s_c_e_n_e_r_y___1_6_9_by_braincorps_dgsf2wm-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi8wYzkzZTE0Ny01N2I3LTQyZDEtOTAwYi1jZDQwOGE0NzViNDAvZGdzZjJ3bS00Mjg0MWQ3YS05NDk5LTQxNzctYWIwYy02MDcwNWM2NGRkMTEuanBnIiwiaGVpZ2h0IjoiPD03MjUiLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiIvd20vMGM5M2UxNDctNTdiNy00MmQxLTkwMGItY2Q0MDhhNDc1YjQwL2JyYWluY29ycHMtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.8_0HdJqzzq4GLjSUgV-3GOuYClqrY5dRsABr04RyyxY");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.home__form {
+  margin: auto;
+  height: 200px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+}
+// a0-=-----------------------------------------------------------------------------------------
 .chat {
   max-width: 800px;
   color: black;
