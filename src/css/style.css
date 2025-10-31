@@ -28,13 +28,21 @@
 }
 
 .chat {
-  max-width: 800px;
+  height: 100vh;
+  display: flex;
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/99614690-d550-4766-9973-cd2faa875358/djcsx3c-88f0df3a-2fc4-426b-a9c9-d1069c32bde1.jpg/v1/fill/w_1192,h_670,q_70,strp/serene_oasis__ancient_archway_and_fountain_by_forebarimages_djcsx3c-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi85OTYxNDY5MC1kNTUwLTQ3NjYtOTk3My1jZDJmYWE4NzUzNTgvZGpjc3gzYy04OGYwZGYzYS0yZmM0LTQyNmItYTljOS1kMTA2OWMzMmJkZTEuanBnIiwiaGVpZ2h0IjoiPD05MDAiLCJ3aWR0aCI6Ijw9MTYwMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiIvd20vOTk2MTQ2OTAtZDU1MC00NzY2LTk5NzMtY2QyZmFhODc1MzU4L2ZvcmViYXJpbWFnZXMtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.HzSvjLHuHAwqnJSrEtAbZzp7jHYxEBwxt7F5K1PpuoM");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.chat__container {
+  width: 800px;
   color: black;
   margin: auto;
   gap: 10px;
   display: flex;
   flex-direction: column;
-  background-color: rgb(180, 180, 179);
   font-family: "mainFont", sans-serif;
 }
 
@@ -57,38 +65,50 @@
 }
 .chat__user-info span {
   font-size: 0.8rem;
-  color: gray;
 }
 
 .chat__stats {
   font-size: 0.8rem;
-  color: gray;
 }
 
 .chat__messages {
   border-radius: 10px;
   padding: 8px;
+  backdrop-filter: blur(5px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(110, 54, 54);
 }
 
 .chat__message-list {
   height: 400px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   overflow-y: scroll;
+}
+
+.chat__message-text {
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0.5rem;
+  border-radius: 0.8rem;
+  width: 70%;
+}
+.chat__message-text span {
+  font-size: 0.8rem;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #555;
 }
 
 .chat__box-input-message {
   width: 100%;
-  background-color: aquamarine;
   display: flex;
   gap: 6px;
 }
