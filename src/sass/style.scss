@@ -1,6 +1,7 @@
 @font-face {
   font-family: "mainFont";
-  src: url("../assets/fonts/Satoshi-Variable.ttf") format("ttf"),
+  src:
+    url("../assets/fonts/Satoshi-Variable.ttf") format("ttf"),
     url("../assets/fonts/Satoshi-Variable.ttf") format("ttf");
   font-weight: normal;
   font-style: normal;
@@ -24,11 +25,35 @@
 
 .home__form {
   margin: auto;
-  height: 200px;
-  padding: 1rem;
+  padding: 2rem;
+  gap: 2rem;
+  border-radius: 0.6rem;
   display: flex;
   flex-direction: column;
-  background-color: aliceblue;
+  background-color: white;
+}
+
+.home__form-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  h1 {
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 0.8rem;
+    color: rgb(71, 71, 71);
+  }
+}
+.home__form-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  label {
+    display: flex;
+    flex-direction: column;
+  }
 }
 // a0-=-----------------------------------------------------------------------------------------
 .chat {
@@ -130,4 +155,15 @@
     border-radius: 10px;
     width: auto;
   }
+}
+.chat__message--own {
+  align-self: flex-end;
+  background-color: #1f5692; // azul suave
+  text-align: right;
+}
+
+.chat__message--other {
+  align-self: flex-start;
+  background-color: rgb(209, 209, 17);
+  text-align: left;
 }

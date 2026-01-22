@@ -20,11 +20,36 @@
 
 .home__form {
   margin: auto;
-  height: 200px;
-  padding: 1rem;
+  padding: 2rem;
+  gap: 2rem;
+  border-radius: 0.6rem;
   display: flex;
   flex-direction: column;
-  background-color: aliceblue;
+  background-color: white;
+}
+
+.home__form-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.home__form-header h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+.home__form-header p {
+  font-size: 0.8rem;
+  color: rgb(71, 71, 71);
+}
+
+.home__form-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.home__form-input-container label {
+  display: flex;
+  flex-direction: column;
 }
 
 .chat {
@@ -122,6 +147,18 @@
 .chat__box-input-message button {
   border-radius: 10px;
   width: auto;
+}
+
+.chat__message--own {
+  align-self: flex-end;
+  background-color: #1f5692;
+  text-align: right;
+}
+
+.chat__message--other {
+  align-self: flex-start;
+  background-color: rgb(209, 209, 17);
+  text-align: left;
 }
 
 /*# sourceMappingURL=style.css.map */
