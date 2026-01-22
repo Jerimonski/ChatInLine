@@ -1,18 +1,17 @@
 interface RegisterUserProps {
-  Url: string
   email: string
   password: string
   IsRegister: (state: boolean) => void
 }
 
 export default async function RegisterUser({
-  Url,
   email,
   password,
   IsRegister,
 }: RegisterUserProps) {
+  const URL = import.meta.env.VITE_URL
   try {
-    const res = await fetch(`${Url}/auth/register`, {
+    const res = await fetch(`${URL}/auth/register`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

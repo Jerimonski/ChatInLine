@@ -1,5 +1,4 @@
 interface LoginProps {
-  Url: string
   email: string
   password: string
   Authenticated: (state: boolean) => void
@@ -7,16 +6,16 @@ interface LoginProps {
 }
 
 export default async function LoginUser({
-  Url,
   email,
   password,
   Authenticated,
   e,
 }: LoginProps) {
+  const URL = import.meta.env.VITE_URL
   e.preventDefault()
 
   try {
-    const res = await fetch(`${Url}/auth/login`, {
+    const res = await fetch(`${URL}/auth/login`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

@@ -3,27 +3,25 @@ import LoginUser from "../LoginUser"
 import RegisterUser from "../RegisterUser"
 
 interface AuthFormProps {
-  Url: string
   Registered: boolean
   SetIsAuthenticated: (state: boolean) => void
   SetIsRegister: (state: boolean) => void
+  SetCurrentUsername: (string: string) => void
 }
 
 export default function LoginForm({
-  Url,
   Registered,
   SetIsAuthenticated,
   SetIsRegister,
+  SetCurrentUsername,
 }: AuthFormProps) {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
-  /* =========================
-         LOGIN
-      ========================= */
   const handleLogin = (e: React.FormEvent) => {
+    SetCurrentUsername(email)
+
     LoginUser({
-      Url: Url,
       email,
       password,
       Authenticated: SetIsAuthenticated,
@@ -31,13 +29,9 @@ export default function LoginForm({
     })
   }
 
-  /* =========================
-         REGISTER
-      ========================= */
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault()
     RegisterUser({
-      Url: Url,
       email,
       password,
       IsRegister: SetIsRegister,
