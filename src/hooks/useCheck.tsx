@@ -1,20 +1,16 @@
 import { useEffect } from "react"
 
 interface UseCheckProps {
-  Url: string
   Loading: (state: boolean) => void
   Authenticated: (state: boolean) => void
 }
 
-export default function useCheck({
-  Url,
-  Loading,
-  Authenticated,
-}: UseCheckProps) {
+export default function useCheck({ Loading, Authenticated }: UseCheckProps) {
+  const URL = import.meta.env.VITE_URL
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await fetch(`${Url}/auth/me`, {
+        const res = await fetch(`${URL}/auth/me`, {
           credentials: "include",
         })
 
@@ -29,6 +25,6 @@ export default function useCheck({
     }
 
     checkAuth()
-  }, [Url, Loading, Authenticated])
+  }, [Loading, Authenticated])
   return null
 }
