@@ -1,3 +1,4 @@
+@use "components/forms";
 @font-face {
   font-family: "mainFont";
   src:
@@ -12,49 +13,18 @@
 
 // CREAR FUNCIONES SASS PARA LOS BACKGROUND QUE LLEVEN SIZE POSITION REPEAT POR DEFAULT UN VARIABLE QUE ES LA URL
 // -----------------------------------------------------------------------------------------------------
-
 .home {
-  top: 0;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
+  align-items: center;
+  justify-content: center;
   background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0c93e147-57b7-42d1-900b-cd408a475b40/dgsf2wm-42841d7a-9499-4177-ab0c-60705c64dd11.jpg/v1/fill/w_1188,h_673,q_70,strp/s_c_e_n_e_r_y___1_6_9_by_braincorps_dgsf2wm-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi8wYzkzZTE0Ny01N2I3LTQyZDEtOTAwYi1jZDQwOGE0NzViNDAvZGdzZjJ3bS00Mjg0MWQ3YS05NDk5LTQxNzctYWIwYy02MDcwNWM2NGRkMTEuanBnIiwiaGVpZ2h0IjoiPD03MjUiLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS53YXRlcm1hcmsiXSwid21rIjp7InBhdGgiOiIvd20vMGM5M2UxNDctNTdiNy00MmQxLTkwMGItY2Q0MDhhNDc1YjQwL2JyYWluY29ycHMtNC5wbmciLCJvcGFjaXR5Ijo5NSwicHJvcG9ydGlvbnMiOjAuNDUsImdyYXZpdHkiOiJjZW50ZXIifX0.8_0HdJqzzq4GLjSUgV-3GOuYClqrY5dRsABr04RyyxY");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.home__form {
-  margin: auto;
-  padding: 2rem;
-  gap: 2rem;
-  border-radius: 0.6rem;
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-}
-
-.home__form-header {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  h1 {
-    font-weight: 700;
-    font-size: 1.5rem;
-  }
-  p {
-    font-size: 0.8rem;
-    color: rgb(71, 71, 71);
-  }
-}
-.home__form-input-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  label {
-    display: flex;
-    flex-direction: column;
-  }
-}
 // a0-=-----------------------------------------------------------------------------------------
 .chat {
   height: 100vh;
@@ -130,11 +100,7 @@
     font-size: 0.8rem;
   }
 }
-// className={`flex flex-col p-2.5 mb-2 rounded-md w-[70%] sm:w-80 ${
-//
-//     ? "bg-purple-800 self-end"
-//     : "bg-slate-800 self-start"
-// }`}
+
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
@@ -158,7 +124,7 @@
 }
 .chat__message--own {
   align-self: flex-end;
-  background-color: #1f5692; // azul suave
+  background-color: #1f5692;
   text-align: right;
 }
 

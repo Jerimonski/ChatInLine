@@ -4,6 +4,7 @@ import Chat from "./components/Chat"
 import useCheck from "./hooks/useCheck"
 import AuthForm from "./components/Form/AuthForm"
 import RoomForm from "./components/Form/RoomForm"
+import "animate.css"
 
 const SERVER_URL = "http://localhost:3000"
 

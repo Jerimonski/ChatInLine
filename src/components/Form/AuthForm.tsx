@@ -40,19 +40,21 @@ export default function LoginForm({
 
   return (
     <form
-      className='home__form'
+      className='home__form animate__animated animate__fadeInDown'
       onSubmit={Registered ? handleRegister : handleLogin}
     >
       <article className='home__form-header'>
-        <h1>{Registered ? "REGISTER" : "LOGIN"}</h1>
+        <h1>{Registered ? "Registro" : "Bienvenido"}</h1>
         <p>
-          {Registered ? "Create an account to continue" : "Login to continue"}
+          {Registered
+            ? "Crea un usuario para continuar"
+            : "Ingresa tu usuario para continuar"}
         </p>
       </article>
 
       <div className='home__form-input-container'>
         <label>
-          Email
+          Correo
           <input
             type='email'
             value={email}
@@ -62,7 +64,7 @@ export default function LoginForm({
         </label>
 
         <label>
-          Password
+          Contraseña
           <input
             type='password'
             value={password}
@@ -71,12 +73,14 @@ export default function LoginForm({
           />
         </label>
       </div>
-
-      <button type='submit'>{Registered ? "Register" : "Login"}</button>
-
-      <button type='button' onClick={() => SetIsRegister(!Registered)}>
-        {Registered ? "Already have an account?" : "Create account"}
-      </button>
+      <div className='home_form-buttons'>
+        <button type='submit'>
+          {Registered ? "Registrarse" : "Iniciar sesion"}
+        </button>
+        <button type='button' onClick={() => SetIsRegister(!Registered)}>
+          {Registered ? "Ya tienes una cuenta?" : "Registrarse"}
+        </button>
+      </div>
     </form>
   )
 }
