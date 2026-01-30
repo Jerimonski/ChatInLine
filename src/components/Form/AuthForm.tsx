@@ -58,6 +58,7 @@ export default function LoginForm({
           <input
             type='email'
             value={email}
+            placeholder='ejemplo@correo.com'
             onChange={(e) => setEmail(e.target.value)}
             required
           />
@@ -68,16 +69,21 @@ export default function LoginForm({
           <input
             type='password'
             value={password}
+            placeholder='Contraseña'
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </label>
       </div>
-      <div className='home_form-buttons'>
-        <button type='submit'>
-          {Registered ? "Registrarse" : "Iniciar sesion"}
+      <div className='home__form-button-container'>
+        <button className='home_form-button' type='submit'>
+          {Registered ? "Registrarse" : "Iniciar sesión"}
         </button>
-        <button type='button' onClick={() => SetIsRegister(!Registered)}>
+        <button
+          className='home_form-button'
+          type='button'
+          onClick={() => SetIsRegister(!Registered)}
+        >
           {Registered ? "Ya tienes una cuenta?" : "Registrarse"}
         </button>
       </div>

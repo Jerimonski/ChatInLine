@@ -30,26 +30,30 @@ export default function RoomForm({
     <div className='home__form'>
       <form onSubmit={handleJoinRoom}>
         <article className='home__form-header'>
-          <h1>ROOM</h1>
-          <p>Enter a room code</p>
+          <h1>Sala</h1>
+          <p>Ingresa un codigo de sala</p>
         </article>
-
         <div className='home__form-input-container'>
-          <label>
-            Room ID
-            <input
-              type='text'
-              value={Room}
-              onChange={(e) => SetRoom(e.target.value)}
-              required
-            />
-          </label>
+          <input
+            type='text'
+            value={Room}
+            onChange={(e) => SetRoom(e.target.value)}
+            required
+          />
         </div>
-        <button type='submit'>Join Room</button>
+        <div className='home__form-button-container'>
+          <button className='home_form-button' type='submit'>
+            Ingresar
+          </button>
+          <button
+            className='home_form-button'
+            type='submit'
+            onClick={handleLogout}
+          >
+            Cerrar Sesion
+          </button>
+        </div>
       </form>
-      <button type='submit' onClick={handleLogout}>
-        Logout
-      </button>
     </div>
   )
 }
