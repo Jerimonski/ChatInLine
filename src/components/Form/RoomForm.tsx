@@ -38,6 +38,7 @@ export default function RoomForm({
             type='text'
             value={Room}
             onChange={(e) => SetRoom(e.target.value)}
+            maxLength={24}
             required
           />
         </div>

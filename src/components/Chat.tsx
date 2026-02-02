@@ -8,6 +8,7 @@ import useLastMessage from "../hooks/useLastMessage"
 import useRoom from "../hooks/useRoom"
 import useMessage from "../hooks/useMessage"
 import MessageBox from "./RoomChat/MessageBox"
+import { SendIcon, UserIcon } from "./common/icons"
 
 interface ChatProps {
   socket: Socket
@@ -58,6 +59,11 @@ export default function Chat({
       IsRegister: SetIsRegister,
     })
   }
+  const handleRoom = async (e: React.FormEvent) => {
+    e.preventDefault()
+    localStorage.removeItem("inRoom")
+    window.location.reload()
+  }
 
   return (
     <main className='chat'>
@@ -66,16 +72,21 @@ export default function Chat({
       <div className='chat__container'>
         <section className='chat__header'>
           <div className='chat__user-info'>
-            <h2 className='chat__title'>Open Chat</h2>
-            <span className='chat__username'>
-              Chateando como: {currentUsername}
-            </span>
+            <div className='chat__user-icon'>
+              <UserIcon size='3rem' color='#DFE9F5' />
+            </div>
+            <div>
+              <h2>{currentUsername}</h2>
+              <span>Sala: {roomCode}</span>
+            </div>
           </div>
-          <button type='submit' onClick={handleLogout}>
-            asdadad
-          </button>
-          <div className='chat__stats'>
-            <span className='chat__messages-count'>Room: {roomCode}</span>
+          <div className='chat__buttons-header'>
+            <button type='submit' onClick={handleRoom}>
+              Salir de la sala
+            </button>
+            <button type='submit' onClick={handleLogout}>
+              Cerrar sesion
+            </button>
           </div>
         </section>
 
@@ -84,6 +95,7 @@ export default function Chat({
             messageList={messageList}
             currentUsername={currentUsername}
           />
+          <hr />
           <div className='chat__box-input-message'>
             <input
               className='chat__input-message'
@@ -94,7 +106,7 @@ export default function Chat({
               type='text'
             />
             <button className='chat__send-button' onClick={sendMessage}>
-              IC
+              <SendIcon size='2rem' color='white' />
             </button>
           </div>
         </section>

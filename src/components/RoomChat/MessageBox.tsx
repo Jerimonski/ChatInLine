@@ -21,9 +21,9 @@ export default function MessageBox({
               isOwnMessage ? "chat__message--own" : "chat__message--other"
             }`}
           >
-            <p className='font-bold'>{message.username}</p>
+            <p className='chat_message-username'>{message.username}</p>
             <p>{message.message}</p>
-            <span className='text-sm font-light text-end'>{message.time}</span>
+            <span>{message.time}</span>
           </div>
         )
       })}
