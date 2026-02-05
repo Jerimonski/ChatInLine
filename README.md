@@ -1,75 +1,110 @@
-# React + TypeScript + Vite
+# 💬 ChatInLine — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ChatInLine es el frontend de una aplicación de chat en tiempo real basada en salas libres identificadas por un código.
 
-Currently, two official plugins are available:
+La aplicación permite a los usuarios registrarse, iniciar sesión y unirse a una sala, donde pueden enviar y recibir mensajes junto a otros usuarios conectados a la misma sala.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+El frontend se comunica con un backend propio mediante:
+- API REST para autenticación y gestión de salas.
+- WebSockets (Socket.IO) para la actualización de mensajes en tiempo real.
 
-## React Compiler
+Todo el sistema funciona de manera local, integrando frontend, backend y base de datos como una solución completa de chat en vivo.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🧠 Stack tecnológico (Frontend)
 
-Note: This will impact Vite dev & build performances.
+- **React 19**
+- **TypeScript**
+- **Vite**
+- **Socket.IO Client**
+- **SASS (SCSS)**
+- **animate.css**
+- **ESLint**
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🔗 Proyecto relacionado (Backend)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Este frontend funciona **exclusivamente junto al backend** de ChatInLine:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+👉 **Repositorio Backend:**  
+https://github.com/Jerimonski/ChatInLine-Backend.git
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+El backend se encarga de:
+- Autenticación (JWT con cookies HTTP-only)
+- Creación y validación de salas
+- Persistencia de mensajes en MongoDB
+- Comunicación en tiempo real con Socket.IO
+
+---
+
+## 🗂 Estructura del proyecto
+```
+src/
+│
+├── assets/
+│ └── fonts/ # Fuentes e íconos
+│
+├── components/
+│ ├── common/ # Componentes reutilizables
+│ │ └── icons/ # Íconos SVG como componentes
+│ │
+│ ├── Form/ # Formularios (login / register)
+│ ├── RoomForm/ # Ingreso a sala por código
+│ ├── RoomChat/ # Vista principal del chat
+│ │
+│ ├── Chat.tsx
+│ ├── LoginUser.tsx
+│ ├── Logout.tsx
+│ └── RegisterUser.tsx
+│
+├── hooks/ # Custom hooks
+│
+├── sass/
+│ ├── abstract/ # Variables y configuración base
+│ ├── components/ # Estilos por componente
+│ ├── chatRoom.scss
+│ ├── forms.scss
+│ └── style.scss
+│
+├── types/ # Tipos TypeScript
+│
+├── App.tsx
+├── main.tsx
+└── index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔐 Flujo de la aplicación
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. **Registro / Login**
+   - El usuario se autentica mediante el backend.
+2. **Ingreso a sala**
+   - Se introduce un código de sala existente.
+3. **Chat en tiempo real**
+   - Envío y recepción de mensajes usando Socket.IO.
+   - Todos los usuarios ven los mensajes en tiempo real.
+
+
+## 🚀 Instalación y ejecución (local)
+
+### 1️⃣ Instalar dependencias
+
+```bash
+1. pnpm install
+2. Levantar servicios necesarios
+Antes de iniciar el frontend, asegúrate de tener:
+
+Backend de ChatInLine corriendo
+
+MongoDB activo en local
+
+3️. Iniciar el frontend
+4. pnpm dev
+La aplicación se ejecutará en el servidor local de Vite.
+
+🛠 Scripts disponibles
+pnpm dev       # Servidor de desarrollo
+pnpm build     # Build de producción
+pnpm preview   # Preview del build
+pnpm lint      # Linting del proyecto
