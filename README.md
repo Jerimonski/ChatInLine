@@ -108,3 +108,8 @@ pnpm dev       # Servidor de desarrollo
 pnpm build     # Build de producción
 pnpm preview   # Preview del build
 pnpm lint      # Linting del proyecto
+```
+## VIsta previa
+<img width="1621" height="937" alt="image" src="https://github.com/user-attachments/assets/8f906cce-69e8-4946-9908-4ed77a5275df" />
+<img width="1451" height="904" alt="image" src="https://github.com/user-attachments/assets/e3f40571-0ef3-4193-9a3a-9c28eea1560b" />
+<img width="977" height="797" alt="image" src="https://github.com/user-attachments/assets/9034273a-8ba9-49f2-a886-12c6aa4e0a94" />
